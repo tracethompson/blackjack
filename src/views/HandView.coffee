@@ -7,8 +7,11 @@ class window.HandView extends Backbone.View
     @collection.on 'add remove change', => @render()
     @render()
 
+
+
   render: ->
-    @$el.children().detach()
+    console.log 'rendered'
+    @$el.children().remove()
     @$el.html @template @collection
     @$el.append @collection.map (card) ->
       new CardView(model: card).$el
