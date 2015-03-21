@@ -3,11 +3,7 @@ class window.Hand extends Backbone.Collection
 
   initialize: (array, @deck, @isDealer) ->
 
-      #trigger loss
-      #new dealer & player hands
-      #two new cards
-      #re render hand view 
-      console.log @deck.length
+      
 
   hit: ->
     @add(@deck.pop())
@@ -31,6 +27,12 @@ class window.Hand extends Backbone.Collection
 
   #Lost method: This event should re render the app view (basically everything)
   lost: ->
+    alert "You lost! Play again?"
+
+  stand: ->
+    console.log @get 'dealerHand'
+    #Attempting to work on dealer hand
+
     
   
 

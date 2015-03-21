@@ -12,14 +12,12 @@ class window.AppView extends Backbone.View
     'click .new-game': -> @model.newGame();
 
   initialize: ->
-    debugger
     @model.on 'newGame', => @render()
     @render()
     
   
 
   render: ->
-    debugger
     @$el.children().detach()
     @$el.html @template()
     @$('.player-hand-container').html new HandView(collection: @model.get 'playerHand').el

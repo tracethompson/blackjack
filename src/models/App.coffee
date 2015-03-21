@@ -11,7 +11,6 @@ class window.App extends Backbone.Model
 
  #trigger newGame function
   newGame: ->
-    debugger
     @set 'deck', deck = new Deck() 
     @set 'playerHand', deck.dealPlayer()
     @set 'dealerHand', deck.dealDealer()
