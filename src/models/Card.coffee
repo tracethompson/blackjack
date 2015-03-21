@@ -15,3 +15,7 @@ class window.Card extends Backbone.Model
     @set 'revealed', !@get 'revealed'
     @
 
+  unflip: ->
+    @set 'revealed', @get 'revealed'
+    @
+

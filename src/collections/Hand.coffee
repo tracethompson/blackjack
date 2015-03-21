@@ -36,11 +36,18 @@ class window.Hand extends Backbone.Collection
 
     else if dealerScore is 21 || playerScore is 21
       alert '$$$ Blackjack $$$'
+
+    # add tie alert
+    else if dealerScore is playerScore
+      alert 'Tie! Split the pot!'
     
 
-  stand: (hit, score, playerScore)->
+  stand: (hit, score, playerScore, firstCard)->
+    firstCard.set 'revealed', true
     if score < playerScore
       $('.stand-button').trigger('click')
+
+
 
 
 

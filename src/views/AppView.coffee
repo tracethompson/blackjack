@@ -17,6 +17,7 @@ class window.AppView extends Backbone.View
       @model.get('playerHand').stand(@model.get('dealerHand').hit(), 
         @model.get('dealerHand').minScore(), 
         @model.get('playerHand').minScore(),
+        @model.get('dealerHand').models[0]
       )
       @model.get('playerHand').scoreCheck(
         @model.get('playerHand').minScore(),
