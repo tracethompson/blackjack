@@ -10,7 +10,6 @@ class window.HandView extends Backbone.View
 
 
   render: ->
-    console.log 'rendered'
     @$el.children().remove()
     @$el.html @template @collection
     @$el.append @collection.map (card) ->

@@ -7,9 +7,7 @@ class window.Hand extends Backbone.Collection
 
   hit: ->
     @add(@deck.pop())
-    # if the minScore is > 21
-    if @minScore() > 21
-      @lost()
+
 
   hasAce: -> @reduce (memo, card) ->
     memo or card.get('value') is 1
@@ -25,13 +23,30 @@ class window.Hand extends Backbone.Collection
     # when there is an ace, it offers you two scores - the original score, and score + 10.
     [@minScore(), @minScore() + 10 * @hasAce()]
 
-  #Lost method: This event should re render the app view (basically everything)
-  lost: ->
-    alert "You lost! Play again?"
 
-  stand: ->
-    console.log @get 'dealerHand'
-    #Attempting to work on dealer hand
+  scoreCheck: (playerScore, dealerScore) ->
+    if playerScore > 21
+      alert 'You busted!'
+
+    else if dealerScore > 21
+      alert 'Dealer busted. You won!'
+
+    else if dealerScore > playerScore && dealerScore < 21 
+      alert 'Dealer Won!'
+
+    else if dealerScore is 21 || playerScore is 21
+      alert '$$$ Blackjack $$$'
+    
+
+  stand: (hit, score, playerScore)->
+    if score < playerScore
+      $('.stand-button').trigger('click')
+
+
+
+
+
+    
 
     
   
