@@ -4,6 +4,8 @@ class window.AppView extends Backbone.View
     <button class="new-game">New game!</button>
     <div class="player-hand-container"></div>
     <div class="dealer-hand-container"></div>
+    
+
   '
 
   events:

@@ -5,7 +5,13 @@
   border-radius: 5px;
   height: 140px;
   margin-right: 20px;
-  box-shadow: 5px 5px grey;
+  background-color: white;
+}
+
+img {
+	width: 100px;
+	border-radius: 5px;
+	height: 140px;
 }
 
 .covered {
@@ -19,4 +25,8 @@
 button {
 	cursor: pointer;
 
+}
+
+body {
+	background-color: green;
 }

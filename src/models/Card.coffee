@@ -11,11 +11,10 @@ class window.Card extends Backbone.Model
         when 12 then 'Queen'
         else params.rank
 
+    # $('.card').css('background-image', 'url(' + rank + '-' + suitName + '.png' + ')')  
+
   flip: ->
     @set 'revealed', !@get 'revealed'
     @
 
-  unflip: ->
-    @set 'revealed', @get 'revealed'
-    @
 
